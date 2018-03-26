@@ -13,10 +13,41 @@ object cuentaDeJulian {
 	method saldo() = saldo
 	
 	method depositar(monto) {
-		// TODO
+		saldo += monto * 0.8
 	} 
 
 	method extraer(monto) {
-		// TODO
+		saldo -= monto
+		if(saldo >= 5)
+		{
+			saldo -= 5
+		}
 	}
 }
+
+object cuentaDelPadre
+{
+	var saldoEnDolares = 0
+	var precioDeCompra = 14.70
+	var precioDeVenta = 15.10
+	method saldo(){
+		return saldoEnDolares * precioDeCompra
+	}
+	method depositar(unaCantidadEnPesos)
+	{
+		saldoEnDolares += unaCantidadEnPesos/precioDeVenta
+	}
+	method extraer(unaCantidadDePesos)
+	{
+		saldoEnDolares -= unaCantidadDePesos/precioDeCompra
+	}
+	method cambiaCompra(unPrecio)
+	{
+		precioDeCompra = unPrecio
+	}
+	method cambiaVenta(unPrecio)
+	{
+		precioDeVenta = unPrecio
+	}
+}
+
